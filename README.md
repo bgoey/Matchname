@@ -3,6 +3,14 @@ Match name is  for loop which goes through the first three and last three letter
 If there is a match it gives you the index on what name in x matches to what index in y.
 By getting the index you can paste another column in y to your dataset in x without deleting any other names in x.
 
+the following function creates substrRigh which selects the last three letters in the name.
+substrRight <- function(x, n){
+  x <- as.character(x)
+  substr(x, nchar(x)-n+1, nchar(x))
+}
+
+
+This is the for loop for the matching.
 
 for(i in 1:257){
   temp = which((substr(x$names[i],1,3)==substr(y$names,1,3))&(substrRight(x$names[i], 3) == substrRight(y$names, 3)))
